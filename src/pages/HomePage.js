@@ -7,10 +7,10 @@ import { ProductContext } from '../context/ProductContext';
 import styles from './HomePage.module.css';
 
 const heroImages = [
-  "/images/hero/hero1.jpg",
-  "/images/hero/hero2.jpg",
-  "/images/hero/hero3.jpg",
-  "/images/hero/hero4.jpg",
+  "/images/hero/hero1.jpeg",
+  "/images/hero/hero2.jpeg",
+  "/images/hero/hero3.jpeg",
+  "/images/hero/hero4.jpeg",
 ];
 
 const SLIDE_INTERVAL = 4000;
