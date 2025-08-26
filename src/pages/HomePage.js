@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
 import ProductCard from '../components/products/ProductCard';
 import { ProductContext } from '../context/ProductContext';
+import ApiTest from '../components/ApiTest';
 import styles from './HomePage.module.css';
 
 const heroImages = [
@@ -39,6 +40,7 @@ const HomePage = () => {
         <title>Your Sweet Shop | Handcrafted Sri Lankan Sweets</title>
         <meta name="description" content="Experience the authentic taste of Sri Lanka. We create traditional, handcrafted sweets with love, using the finest local ingredients." />
       </Helmet>
+      <ApiTest />
       
       {/* Cinematic Hero Section */}
       <section className={styles.hero}>

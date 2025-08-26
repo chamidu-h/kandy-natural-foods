@@ -1,7 +1,9 @@
 import React, { createContext, useState, useEffect, useCallback, useMemo } from 'react';
 
-// Replace with your actual deployed admin URL
-const API_BASE_URL = 'https://kandy-admin.vercel.app/api';
+// Use environment variable for API URL
+const API_BASE_URL = process.env.REACT_APP_ADMIN_API_URL || 'https://kandy-admin.vercel.app/api';
+
+console.log('ProductContext: Using API Base URL:', API_BASE_URL);
 
 export const ProductContext = createContext();
 
@@ -17,10 +19,13 @@ export const ProductProvider = ({ children }) => {
 
   // Fetch products from your deployed admin API
   const fetchProducts = useCallback(async () => {
+    console.log('ProductContext: Starting fetchProducts...');
     setLoading(true);
     setError(null);
     
     try {
+      console.log('ProductContext: Fetching from:', `${API_BASE_URL}/products`);
+      
       const response = await fetch(`${API_BASE_URL}/products`, {
         method: 'GET',
         headers: {
@@ -28,16 +33,26 @@ export const ProductProvider = ({ children }) => {
         },
       });
 
+      console.log('ProductContext: Response status:', response.status);
+
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
 
       const data = await response.json();
-      console.log('Successfully fetched products from API:', data.length);
-      setAllProducts(data);
+      console.log('ProductContext: Successfully fetched', data.length, 'products from API');
+      console.log('ProductContext: Products:', data);
+      
+      if (data && data.length > 0) {
+        setAllProducts(data);
+      } else {
+        console.log('ProductContext: No products from API, using fallback');
+        setAllProducts(mockProducts);
+        setError('No products found on server. Showing sample products.');
+      }
     } catch (err) {
-      console.error('Failed to fetch products from API:', err);
-      setError('Failed to load products from server');
+      console.error('ProductContext: Failed to fetch products from API:', err);
+      setError(`Failed to connect to admin server: ${err.message}. Showing sample products.`);
       
       // Fallback to mock data if API fails
       setAllProducts(mockProducts);
@@ -166,10 +181,10 @@ export const ProductProvider = ({ children }) => {
     fetchProducts();
   };
 
-  // Clear any errors
-  const clearError = () => {
+  // Clear error
+  const clearError = useCallback(() => {
     setError(null);
-  };
+  }, []);
 
   const value = {
     // Data
@@ -189,7 +204,7 @@ export const ProductProvider = ({ children }) => {
     deleteProduct,
     
     // Utilities
-    refreshProducts,
+    refreshProducts: fetchProducts,
     clearError,
   };
 
