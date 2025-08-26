@@ -1,0 +1,96 @@
+:root {
+  /* BRAND COLORS */
+  --primary-color: #3a7d44;           /* Brand green */
+  --secondary-color: #63ab3a;         /* Vibrant logo green */
+  --accent-color: #9dcc5a;            /* Light/bright accent green */
+  --brown: #7d4f1d;                   /* Warm, organic brown */
+
+  /* BACKGROUND & SURFACE */
+  --background-color: #f8f9f5;        /* Green-tinted soft white */
+  --white: #ffffff;
+  --light-gray: #e8ede6;              /* Gentle green-gray for panels */
+  --medium-gray: #c4d1c0;
+
+  /* TEXT */
+  --text-color: #2c4a32;              /* Rich deep green */
+  --text-light: #5a7a62;              /* Medium green for secondary/subtitle */
+  --text-muted: #7a9582;              /* Muted for less important text */
+
+  /* FEEDBACK COLORS */
+  --success-color: #63ab3a;
+  --warning-color: #d4a843;
+  --error-color: #c44536;
+  --focus-color: #63ab3a;
+
+  /* TYPOGRAPHY */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+
+  /* LAYOUT */
+  --max-width: 1200px;
+  --border-radius: 12px;
+  --border-radius-small: 6px;
+  --box-shadow: 0 4px 20px rgba(58,125,68,0.08);
+  --box-shadow-hover: 0 8px 30px rgba(58,125,68,0.15);
+
+  /* SPACING */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: var(--spacing-lg);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Links --- */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+a:hover,
+a:focus {
+  color: var(--secondary-color);
+  outline: none;
+}

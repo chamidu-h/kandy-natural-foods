@@ -1,0 +1,64 @@
+.dashboard {
+    padding: 1.5rem; /* Reduced padding for mobile */
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.section {
+    margin-top: 2rem;
+}
+
+.productList {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.productItem {
+    display: flex;
+    /* Allow items to stack on small screens */
+    flex-direction: column; 
+    align-items: flex-start; /* Align to the start */
+    gap: 0.75rem; /* Add space between stacked items */
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .productItem {
+        /* Restore horizontal layout on desktops */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+.productItem:last-child {
+    border-bottom: none;
+}
+
+.editButton, .deleteButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 0; /* Remove margin for mobile */
+}
+
+/* Add margin back on larger screens */
+@media (min-width: 768px) {
+    .editButton, .deleteButton {
+        margin-left: 0.5rem;
+    }
+}
+
+.editButton {
+    background-color: var(--secondary-color);
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+    color: white;
+}

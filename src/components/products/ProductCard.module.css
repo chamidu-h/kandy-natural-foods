@@ -1,0 +1,111 @@
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--light-gray);
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-decoration: none;
+}
+
+/* Enhanced hover effects with brand colors */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--box-shadow-hover);
+    z-index: 20;
+    border-color: var(--secondary-color);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: var(--light-gray);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* Navigation buttons with brand colors */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(58, 125, 68, 0.7);  /* Brand green with transparency */
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+  opacity: 0;
+  box-shadow: 0 2px 8px rgba(58, 125, 68, 0.2);
+}
+
+.card:hover .navButton {
+  opacity: 1;
+}
+
+.navButton:hover {
+  background-color: var(--secondary-color);
+}
+
+.prevButton { left: 0.5rem; }
+.nextButton { right: 0.5rem; }
+
+.content {
+  padding: 1rem;
+  flex-grow: 1;
+  background: linear-gradient(180deg, var(--white) 0%, rgba(248, 249, 245, 0.3) 100%);
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-secondary);
+}
+
+.price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  background: rgba(99, 171, 58, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius-small);
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .imageContainer { height: 200px; }
+  .content { padding: 1.5rem; }
+  .name { font-size: 1.2rem; }
+  .price { font-size: 1.1rem; }
+}

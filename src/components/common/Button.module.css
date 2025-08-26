@@ -1,0 +1,77 @@
+.button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 6px 24px rgba(58, 125, 68, 0.11); /* More visible soft shadow */
+  transition: 
+    background-color 0.18s, 
+    color 0.18s, 
+    box-shadow 0.18s, 
+    outline 0.18s;
+  outline: 2px solid transparent; /* for focus style below */
+  letter-spacing: 0.01em;
+}
+
+.primary {
+  background-color: var(--primary-color); /* Deep green */
+  color: var(--white);                    /* White text */
+  border: 2px solid rgba(60, 140, 60, 0.15);   /* Subtle dark green border */
+}
+
+.primary:hover,
+.primary:focus {
+  background-color: var(--secondary-color); /* Vibrant green */
+  color: var(--white);
+  border-color: rgba(60, 140, 60, 0.25);    /* Slightly stronger border */
+  box-shadow: 0 8px 28px 0 rgba(99, 171, 58, 0.22),
+              0 1.5px 3px 0 rgba(0, 0, 0, 0.06);
+  outline: 2.5px solid var(--white);
+}
+
+.secondary {
+  background-color: var(--secondary-color);   /* Logo green */
+  color: var(--white);                        /* White text for contrast */
+  border: 2px solid rgba(99, 171, 58, 0.20);  /* Subtle green border */
+}
+
+.secondary:hover,
+.secondary:focus {
+  background-color: var(--accent-color);      /* Lighter green on hover */
+  color: var(--white);
+  border-color: var(--secondary-color);       /* Stronger green border on hover */
+  box-shadow: 0 8px 28px 0 rgba(99, 171, 58, 0.16),
+              0 1.5px 3px 0 rgba(0, 0, 0, 0.08);
+  outline: 2.5px solid var(--white);
+}
+
+.brown {
+  background-color: var(--brown);
+  color: var(--white);
+  border: 2px solid #a46d3a; /* Warm accent border */
+}
+.brown:hover,
+.brown:focus {
+  background-color: #3a2711;
+  color: var(--white);
+  border-color: var(--brown);
+  box-shadow: 0 6px 24px rgba(125, 79, 29, 0.09);
+  outline: 2.5px solid var(--white);
+}
+
+/* Add high-contrast outline on keyboard tab for accessibility */
+.button:focus-visible {
+  outline: 3px solid var(--secondary-color);
+}
+
+/* Optional: Slightly larger text for hero section buttons specifically */
+.heroButtons .button {
+  font-size: 1.05rem;
+  min-width: 160px;
+}

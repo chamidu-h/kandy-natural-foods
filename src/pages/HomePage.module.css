@@ -1,0 +1,225 @@
+.homeContainer {
+    width: 100%;
+}
+
+/* Enhanced Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    color: var(--white);
+    margin-bottom: 3rem;
+    background: transparent;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        min-height: 60vh;
+        padding: 6rem 2rem;
+    }
+}
+
+/* Hero Slider with Brand-Aligned Overlay */
+.heroBgSlider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bgSlide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.07);
+    transition: opacity 1s cubic-bezier(.77,0,.18,1), transform 1.5s cubic-bezier(.77,0,.18,1);
+    z-index: 1;
+    will-change: opacity, transform;
+}
+
+.activeBg {
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+    115deg,
+    rgba(131, 143, 135, 0.65) 0%,        
+    rgba(93, 114, 101, 0.75) 50%,      
+    rgba(50, 80, 62, 0.7) 80%,      
+    rgba(33, 58, 45, 0.8) 100%       
+),
+rgba(42, 77, 56, 0.6);    
+
+
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: none;
+}
+
+.heroTitle {
+    font-family: var(--font-secondary);
+    font-size: 2.2rem;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(58, 125, 68, 0.3);
+}
+
+@media (min-width: 768px) {
+    .heroTitle { font-size: 3.5rem; }
+}
+
+.heroSubtitle {
+    font-family: var(--font-primary);
+    font-size: 1.08rem;
+    font-weight: 300;
+    color: #f8f8f8;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.heroButtons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0 0 0;
+}
+
+/* Brand-Aligned Slider Dots */
+.sliderDots {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.dotActive {
+    background: var(--accent-color);
+    border-color: var(--white);
+    box-shadow: 0 0 0 2px rgba(157, 204, 90, 0.3);
+}
+
+/* Section Titles with Brand Colors */
+.sectionTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.sectionTitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Featured Products Section */
+.featuredSection {
+    padding: 3rem 0;
+    background: rgba(248, 249, 245, 0.3);
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+}
+
+.featuredGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .featuredGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.viewAllButtonContainer {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* Story Section */
+.storySection {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, var(--white) 0%, rgba(248, 249, 245, 0.8) 100%);
+    padding: 3rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 3rem;
+    border: 1px solid var(--light-gray);
+    box-shadow: var(--box-shadow);
+}
+
+@media (min-width: 992px) {
+    .storySection {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        padding: 4rem 2rem;
+    }
+}
+
+.storyContent {
+    text-align: left;
+}
+
+.storyContent .sectionTitle {
+    text-align: left;
+}
+
+.storyContent .sectionTitle::after {
+    margin-left: 0;
+}
+
+.storyImage img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-hover);
+    border: 2px solid var(--light-gray);
+}

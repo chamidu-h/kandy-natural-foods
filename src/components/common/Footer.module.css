@@ -1,0 +1,11 @@
+/* ==== FOOTER ==== */
+.footer {
+  background-color: var(--primary-color);  /* Deep green footer for strong brand */
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  border-top: 1px solid var(--light-gray);
+  letter-spacing: 0.02em;
+}
