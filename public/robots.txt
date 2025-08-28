@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: [YOUR_SITEMAP_URL]
+Sitemap: https://www.kandynaturalfoods.com/sitemap.xml
 
