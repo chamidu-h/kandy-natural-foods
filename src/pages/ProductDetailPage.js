@@ -25,7 +25,7 @@ const ProductDetailPage = () => {
   return (
     <div>
       <Helmet>
-        <title>{`${product.name} | Your Sweet Shop Name`}</title>
+        <title>{`${product.name} | Kandy Natural Foods`}</title>
         <meta name="description" content={product.description} />
       </Helmet>
       <div className={styles.container}>

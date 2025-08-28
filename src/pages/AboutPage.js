@@ -23,7 +23,7 @@ const AboutPage = () => {
   return (
     <div className={styles.aboutContainer}>
       <Helmet>
-        <title>Our Story & Contact | Your Sweet Shop Name</title>
+        <title>Our Story & Contact | Kandy Natural Foods</title>
         <meta 
           name="description" 
           content="Learn about our heritage, passion for Sri Lankan sweets, and how to contact us. Find our address, phone number, and business hours." 

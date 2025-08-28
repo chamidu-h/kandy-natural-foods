@@ -32,11 +32,28 @@ const HomePage = () => {
   // Manual navigation (optional for mobile)
   const goToSlide = idx => setCurrentSlide(idx);
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kandy Natural Foods",
+    "url": "https://www.kandynaturalfoods.com",
+    "logo": "https://www.kandynaturalfoods.com/images/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+94-772280203",
+      "contactType": "Customer Service"
+    }
+  };
+
   return (
     <div className={styles.homeContainer}>
       <Helmet>
-        <title>Your Sweet Shop | Handcrafted Sri Lankan Sweets</title>
+        <title>Kandy Natural Foods | Handcrafted Sri Lankan Sweets</title>
         <meta name="description" content="Experience the authentic taste of Sri Lanka. We create traditional, handcrafted sweets with love, using the finest local ingredients." />
+        <link rel="icon" type="image/png" href="/public/favicon.ico" />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
       </Helmet>
       
       {/* Cinematic Hero Section */}
