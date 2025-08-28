@@ -10,7 +10,6 @@ const heroImages = [
   "/images/hero/hero1.JPG",
   "/images/hero/hero2.JPG",
   "/images/hero/hero3.JPG",
-  "/images/hero/hero4.JPG",
 ];
 
 const SLIDE_INTERVAL = 4000;
