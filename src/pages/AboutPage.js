@@ -5,19 +5,16 @@ import Button from '../components/common/Button';
 import styles from './AboutPage.module.css';
 
 const AboutPage = () => {
-  // Create a ref for the contact section
   const contactSectionRef = useRef(null);
 
-  // Effect to scroll to the contact section if the URL hash is present
   useEffect(() => {
-    // A short delay ensures the page has rendered before scrolling
     const timer = setTimeout(() => {
       if (window.location.hash === '#contact-us' && contactSectionRef.current) {
         contactSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }, 100);
 
-    return () => clearTimeout(timer); // Cleanup timer on unmount
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -26,30 +23,31 @@ const AboutPage = () => {
         <title>Our Story & Contact | Kandy Natural Foods</title>
         <meta 
           name="description" 
-          content="Learn about our heritage, passion for Sri Lankan sweets, and how to contact us. Find our address, phone number, and business hours." 
+          content="Learn about Kandy Natural Foods, our heritage in Panvila, Kandy, and our passion for creating natural, handmade Sri Lankan sweets like Kithul Jaggery and Gingelly rolls." 
         />
+        <link rel="canonical" href="https://www.kandynaturalfoods.com/about" />
       </Helmet>
 
       {/* Page Header Section */}
       <section className={styles.headerSection}>
-        <h1>From Our Island, to Your Heart</h1>
+        <h1>Keepers of a Sweet Tradition</h1>
         <p className={styles.subtitle}>
-          We are more than just a sweet shop. We are keepers of tradition, curators of flavor, and a family dedicated to sharing the authentic taste of Sri Lanka.
+          We are a trusted Sri Lankan company dedicated to producing high-quality, original, and naturally handmade food items that honor our island's heritage.
         </p>
       </section>
 
       {/* Our Heritage Section */}
       <section className={styles.heritageSection}>
         <div className={styles.heritageImage}>
-          <img src="/images/story.jpeg" alt="A depiction of traditional sweet making" />
+          <img src="/images/story.jpeg" alt="A depiction of traditional sweet making in Sri Lanka" />
         </div>
         <div className={styles.heritageContent}>
-          <h2>A Legacy of Sweetness</h2>
+          <h2>A Legacy of Natural Goodness</h2>
           <p>
-            Our story began in a small village kitchen, with recipes passed down through generations. These weren't just instructions on paper; they were stories of celebrations, family gatherings, and the simple joy of a perfectly made *kevum*. We honor this legacy by using the same time-tested methods and the purest local ingredients—kithul treacle from the nearby palms, fresh coconuts, and rice flour milled in our community.
+            Founded by Mr. Nandalal S Sirimalwaththa and Nishani L Amarasinghe, Kandy Natural Foods began with a simple mission: to share the authentic taste of Sri Lanka with the world. Our journey started in a small kitchen in Panvila, Kandy, with recipes passed down through generations. These weren't just instructions; they were stories of family, celebration, and the simple joy of a perfectly made sweet.
           </p>
           <p>
-            Every sweet we create is a piece of our heritage, a tribute to the hands that first crafted these delicacies.
+            We honor this legacy by using the same time-tested methods and the purest local ingredients—from rich Kithul sap to nutritious sesame seeds.
           </p>
         </div>
       </section>
@@ -59,21 +57,21 @@ const AboutPage = () => {
         <h2>Our Promise to You</h2>
         <div className={styles.promiseGrid}>
           <div className={styles.promiseCard}>
-            <h3>Authentic Ingredients</h3>
-            <p>We source everything locally, from the jaggery to the spices, ensuring every bite is fresh and flavorful.</p>
+            <h3>Pure & Natural Ingredients</h3>
+            <p>We source the finest Kithul sap, sesame, and spices locally, ensuring every product is fresh, authentic, and free from additives.</p>
           </div>
           <div className={styles.promiseCard}>
             <h3>Handcrafted with Care</h3>
-            <p>No machines, no shortcuts. Every sweet is shaped, fried, and decorated by our skilled artisans.</p>
+            <p>No shortcuts. Every product, from Kithul Jaggery to Gingelly Rolls, is handmade by skilled artisans dedicated to quality.</p>
           </div>
           <div className={styles.promiseCard}>
-            <h3>A Taste of Home</h3>
-            <p>For those who miss it and for those who are new to it, we aim to deliver the comforting taste of a true Sri Lankan home.</p>
+            <h3>Authentic Sri Lankan Taste</h3>
+            <p>We deliver the comforting, genuine taste of a Sri Lankan home, preserving the flavors that have been cherished for centuries.</p>
           </div>
         </div>
       </section>
 
-      {/* Contact Details Section - Add ref and id */}
+      {/* Contact Details Section */}
       <section 
         ref={contactSectionRef} 
         id="contact-us" 
@@ -81,25 +79,24 @@ const AboutPage = () => {
       >
         <h2>Get in Touch</h2>
         <p className={styles.contactSubtitle}>
-          We'd love to hear from you! Visit our shop, give us a call, or send us an email for any inquiries or special orders.
+          We'd love to hear from you! Visit us, call, or send an email for inquiries, special requests, or to place an order.
         </p>
         <div className={styles.contactGrid}>
           <div className={styles.contactItem}>
-            <h3>Our Shop</h3>
-            <p>123 Galle Road, Colombo 03, Sri Lanka</p>
+            <h3>Our Address</h3>
+            <p>41/B, Nicedail Garden, Liyangaswagura, Panvila, Kandy, Sri Lanka</p>
           </div>
           <div className={styles.contactItem}>
-            <h3>Phone</h3>
-            <p>+94 77 123 4567</p>
+            <h3>Phone / WhatsApp</h3>
+            <p>+94 77 228 0203</p>
           </div>
           <div className={styles.contactItem}>
             <h3>Email</h3>
-            <p>orders@yoursweetshop.lk</p>
+            <p>kandynaturalfoods@gmail.com</p>
           </div>
           <div className={styles.contactItem}>
             <h3>Business Hours</h3>
-            <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
-            <p>Sunday: 10:00 AM - 5:00 PM</p>
+            <p>Always Open</p>
           </div>
         </div>
       </section>
@@ -108,10 +105,10 @@ const AboutPage = () => {
       <section className={styles.ctaSection}>
         <h2>Experience the Tradition</h2>
         <p>
-          Now that you know our story, we invite you to taste the love and heritage baked into every treat.
+          Now that you know our story, we invite you to taste the love and heritage crafted into every product.
         </p>
         <Link to="/products">
-          <Button variant="secondary">Browse Our Collection</Button>
+          <Button variant="secondary">Browse Our Shop</Button>
         </Link>
       </section>
     </div>

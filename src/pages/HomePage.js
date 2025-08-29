@@ -18,7 +18,6 @@ const HomePage = () => {
   const { products, loading } = React.useContext(ProductContext);
   const featuredProducts = products.slice(0, 6);
 
-  // HERO SLIDER STATE
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -29,28 +28,46 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  // Manual navigation (optional for mobile)
   const goToSlide = idx => setCurrentSlide(idx);
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Kandy Natural Foods",
+    "name": "Kandy Natural Foods (PVT) LTD",
     "url": "https://www.kandynaturalfoods.com",
-    "logo": "https://www.kandynaturalfoods.com/images/logo.png",
+    "logo": "https://www.kandynaturalfoods.com/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+94-772280203",
-      "contactType": "Customer Service"
-    }
+      "telephone": "+94-77-228-0203",
+      "contactType": "Customer Service",
+      "email": "kandynaturalfoods@gmail.com",
+      "areaServed": "LK",
+      "availableLanguage": "en"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "41/B, Nicedail Garden, Liyangaswagura, Panvila",
+      "addressLocality": "Kandy",
+      "country": "LK"
+    },
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Mr. Nandalal S Sirimalwaththa"
+      },
+      {
+        "@type": "Person",
+        "name": "Nishani L Amarasinghe"
+      }
+    ]
   };
 
   return (
     <div className={styles.homeContainer}>
       <Helmet>
-        <title>Kandy Natural Foods | Handcrafted Sri Lankan Sweets</title>
-        <meta name="description" content="Experience the authentic taste of Sri Lanka. We create traditional, handcrafted sweets with love, using the finest local ingredients." />
-        <link rel="icon" type="image/png" href="/public/favicon.ico" />
+        <title>Kandy Natural Foods | Authentic Sri Lankan Kithul & Gingelly Sweets</title>
+        <meta name="description" content="Buy pure Kithul Jaggery, Kithul Treacle, and handmade Gingelly rolls online. Experience the traditional taste of Kandy, Sri Lanka, delivered to your door." />
+        <link rel="canonical" href="https://www.kandynaturalfoods.com" />
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}
         </script>
@@ -67,23 +84,21 @@ const HomePage = () => {
               aria-hidden={idx !== currentSlide}
             />
           ))}
-          {/* Layered color and gradient for legibility */}
           <div className={styles.heroOverlay}></div>
         </div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>A Taste of Tradition, Crafted with Love</h1>
+          <h1 className={styles.heroTitle}>Authentic Kithul Jaggery & Traditional Sweets</h1>
           <p className={styles.heroSubtitle}>
-            Discover the authentic flavors of Sri Lankan sweets, made fresh daily with the finest local ingredients.
+            Discover the rich, natural flavors of handmade Kithul Jaggery, Kithul Treacle, and Gingelly sweets, crafted with love in the heart of Kandy.
           </p>
           <div className={styles.heroButtons}>
             <Link to="/products">
-              <Button variant="secondary">Explore Our Sweets</Button>
+              <Button variant="secondary">Explore Our Products</Button>
             </Link>
             <Link to="/about#contact-us">
               <Button variant="primary">Contact Us</Button>
             </Link>
           </div>
-          {/* Slider pagination indicator for manual control (optional) */}
           <div className={styles.sliderDots}>
             {heroImages.map((img, idx) => (
               <button
@@ -100,9 +115,9 @@ const HomePage = () => {
 
       {/* Featured Products Section */}
       <section className={styles.featuredSection}>
-        <h2 className={styles.sectionTitle}>Our Featured Treats</h2>
+        <h2 className={styles.sectionTitle}>Our Specialty Products</h2>
         {loading ? (
-          <p>Loading our delicious sweets...</p>
+          <p>Loading our delicious handcrafted treats...</p>
         ) : (
           <div className={styles.featuredGrid}>
             {featuredProducts.map(product => (
@@ -110,10 +125,9 @@ const HomePage = () => {
             ))}
           </div>
         )}
-        {/* New "View All" button added below the grid */}
         <div className={styles.viewAllButtonContainer}>
             <Link to="/products">
-                <Button variant="primary">View All Sweets</Button>
+                <Button variant="primary">View All Products</Button>
             </Link>
         </div>
       </section>
@@ -121,16 +135,16 @@ const HomePage = () => {
       {/* Our Story Section */}
       <section className={styles.storySection}>
         <div className={styles.storyContent}>
-            <h2 className={styles.sectionTitle}>From Our Family to Yours</h2>
+            <h2 className={styles.sectionTitle}>From Kandy Natural Foods to You</h2>
             <p>
-                For generations, our family has perfected the art of Sri Lankan sweet-making. We pour our hearts into every recipe, using time-honored techniques and pure, natural ingredients. It's more than just a business—it's our heritage.
+                Kandy Natural Foods is a trusted family company dedicated to preserving Sri Lanka's culinary heritage. We use time-honored recipes and the finest natural ingredients to create authentic, healthy, and delicious foods.
             </p>
-            <Link to="/products">
-                <Button variant="primary">View Full Collection</Button>
+            <Link to="/about">
+                <Button variant="primary">Discover Our Story</Button>
             </Link>
         </div>
         <div className={styles.storyImage}>
-            <img src="/images/story.jpeg" alt="The making of our sweets" />
+            <img src="/images/story.jpeg" alt="The traditional art of Sri Lankan Kithul Jaggery making" />
         </div>
       </section>
 
