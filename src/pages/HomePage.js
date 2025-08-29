@@ -16,8 +16,9 @@ const SLIDE_INTERVAL = 4000;
 
 const HomePage = () => {
   const { products, loading } = React.useContext(ProductContext);
-  const featuredProducts = products.slice(0, 6);
+  const [featuredProducts, setFeaturedProducts] = useState([]);
 
+  // Hero slider state and effect
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -28,7 +29,33 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  const goToSlide = idx => setCurrentSlide(idx);
+  // Effect to select random featured products when the product list is available
+  useEffect(() => {
+    if (products.length > 0) {
+      // Create a shuffled copy of the products array (Fisher-Yates shuffle)
+      const shuffled = [...products];
+      let currentIndex = shuffled.length;
+      let randomIndex;
+
+      // While there remain elements to shuffle
+      while (currentIndex !== 0) {
+        // Pick a remaining element
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element
+        [shuffled[currentIndex], shuffled[randomIndex]] = [
+          shuffled[randomIndex],
+          shuffled[currentIndex],
+        ];
+      }
+
+      // Set the featured products to the first 6 items of the shuffled array
+      setFeaturedProducts(shuffled.slice(0, 6));
+    }
+  }, [products]); // This effect runs whenever the main 'products' list changes
+
+  const goToSlide = (idx) => setCurrentSlide(idx);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -105,7 +132,7 @@ const HomePage = () => {
                 key={img}
                 aria-label={`Show slide ${idx + 1}`}
                 className={`${styles.dot} ${idx === currentSlide ? styles.dotActive : ''}`}
-                onClick={e => { e.preventDefault(); goToSlide(idx); }}
+                onClick={(e) => { e.preventDefault(); goToSlide(idx); }}
                 tabIndex={0}
               />
             ))}
@@ -120,7 +147,7 @@ const HomePage = () => {
           <p>Loading our delicious handcrafted treats...</p>
         ) : (
           <div className={styles.featuredGrid}>
-            {featuredProducts.map(product => (
+            {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
