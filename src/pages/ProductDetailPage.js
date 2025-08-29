@@ -20,7 +20,7 @@ const ProductDetailPage = () => {
   // Use an empty array as a fallback
   const { images = [] } = product;
 
-  const whatsappMessage = `https://wa.me/+94717524985?text=I'm%20interested%20in%20your%20product:%20${product.name}`;
+  const whatsappMessage = `https://wa.me/+94772280203?text=I'm%20interested%20in%20your%20product:%20${product.name}`;
 
   return (
     <div>
