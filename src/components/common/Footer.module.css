@@ -9,3 +9,14 @@
   border-top: 1px solid var(--light-gray);
   letter-spacing: 0.02em;
 }
+
+.footer a {
+  color: lightblue; 
+  text-decoration: none; 
+  transition: color 0.2s ease-in-out; 
+}
+
+.footer a:hover {
+  color: darkblue; 
+}
+
