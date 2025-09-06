@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className={styles.footer}>
       <p>
         &copy; {new Date().getFullYear()}{' '}
-        <a href="https://www.facebook.com/share/174QjVA5Su/?mibextid=wwXIfr">
+        <a href="https://www.facebook.com/share/174QjVA5Su/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           horizonhex.org
         </a>{' '}
         All Rights Reserved.

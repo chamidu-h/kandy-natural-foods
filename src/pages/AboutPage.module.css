@@ -1,71 +1,171 @@
-.aboutContainer {
-    width: 100%;
+/* General Styles without animations */
+
+.pageWrapper {
+  /* animation removed intentionally for no entry animation */
 }
 
-/* Header Section */
+.aboutContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+  padding: 3rem 0;
+  /* animation properties removed */
+  opacity: 1; /* Ensure visible with removed animation */
+}
+
+/* Add section indices removed since animations are removed - no longer needed */
+
 .headerSection {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(135deg, var(--white) 0%, rgba(248, 249, 245, 0.8) 100%);
-    border-radius: var(--border-radius);
-    margin-bottom: 3rem;
-    border: 1px solid var(--light-gray);
-    box-shadow: var(--box-shadow);
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background-color: var(--light-background, #f8f9fa);
+  border-radius: var(--border-radius-large, 16px);
+  border: 1px solid var(--light-gray, #e9ecef);
+}
+
+.headerSection h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 1rem auto 0;
-    color: var(--text-light);
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: 1rem auto 0;
+  color: var(--text-light, #6c757d);
+  line-height: 1.6;
 }
 
 /* Heritage Section */
 .heritageSection {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 3rem;
-    padding: 2rem 1rem;
-    background: rgba(248, 249, 245, 0.3);
-    border-radius: var(--border-radius);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
 }
 
-@media (min-width: 992px) {
-    .heritageSection {
-        grid-template-columns: 1fr 1.2fr;
-        gap: 3rem;
-        padding: 3rem 2rem;
-    }
+.heritageImage {
+  overflow: hidden;
+  border-radius: var(--border-radius-large, 16px);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .heritageImage img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow-hover);
-    border: 2px solid var(--light-gray);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.heritageImage:hover img {
+  transform: scale(1.05);
 }
 
 .heritageContent p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
 }
 
-/* Promise Section */
+/* Kithul History Section */
+.kithulHistorySection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: rgba(248, 249, 245, 0.5);
+  padding: 3rem 1.5rem;
+  border-radius: var(--border-radius-large, 16px);
+}
+
+.kithulHistoryContent h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.kithulHistoryImage {
+  overflow: hidden;
+  border-radius: var(--border-radius-large, 16px);
+}
+
+.kithulHistoryImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.kithulHistoryImage:hover img {
+  transform: scale(1.05);
+}
+
+/* Kithul Products Section */
+.kithulProductsSection {
+  text-align: center;
+}
+
+.kithulProductsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.productCard {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius, 12px);
+  box-shadow: var(--box-shadow, 0 4px 12px rgba(0,0,0,0.05));
+  border: 1px solid var(--light-gray, #e9ecef);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--box-shadow-hover, 0 8px 24px rgba(0,0,0,0.1));
+}
+
+.productImageContainer {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.productImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Our Promise Section */
 .promiseSection {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1.5rem;
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  border-radius: var(--border-radius);
-  /* remove color: var(--white); */
+  border-radius: var(--border-radius-large, 16px);
 }
 
 .promiseSection h2 {
   color: var(--white);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .promiseGrid {
@@ -76,82 +176,150 @@
   margin: 0 auto;
 }
 
+.promiseCard {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-hover);
+  border-top: 5px solid var(--accent-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promiseCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Sweets Celebration Section */
+.sweetsCelebrationSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sweetsContent {
+  text-align: center;
+}
+
+.sweetsImageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.gridImageContainer {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1 / 1;
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gridImageContainer:hover .gridImage {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
+
+/* Contact Section */
+.contactSection {
+  text-align: center;
+}
+
+.contactSubtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 1rem auto 2.5rem;
+  color: var(--text-light);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contactItem {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--secondary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactItem:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* CTA Section */
+.ctaSection {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #7d4f1d 0%, #a46d3a 100%);
+  color: var(--white);
+  border-radius: var(--border-radius-large, 16px);
+  margin-top: 2rem;
+}
+
+.ctaSection h2,
+.ctaSection p {
+  color: var(--white);
+}
+
+.ctaSection a button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design (Mobile First) */
 @media (min-width: 600px) {
   .promiseGrid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
   }
+  .contactGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
 }
 
-.promiseCard {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-hover);
-  border-top: 4px solid var(--accent-color);
-  transition: transform 0.3s ease;
-}
-
-.promiseCard:hover {
-  transform: translateY(-5px);
-}
-
-.promiseCard h3 {
-  color: var(--primary-color);           /* keep brand-colored headings */
-}
-
-/* Contact Section */
-.contactSection {
-    padding: 3rem 1rem;
-    text-align: center;
-    background: rgba(248, 249, 245, 0.5);
-}
-
-.contactGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
+@media (min-width: 768px) {
+  .heritageSection {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+  }
+  .kithulHistorySection {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    padding: 4rem 2.5rem;
+  }
+  .kithulProductsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sweetsCelebrationSection {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
+  }
+  .sweetsContent {
     text-align: left;
+  }
+  .headerSection h1 {
+    font-size: 3rem;
+  }
 }
 
-@media (min-width: 600px) {
-    .contactGrid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-}
-
-.contactItem {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    border-left: 4px solid var(--secondary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contactItem:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--box-shadow-hover);
-}
-
-.contactItem h3 {
-    color: var(--primary-color);
-}
-
-/* CTA Section */
-.ctaSection {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(135deg, #7d4f1d 0%, #a46d3a 100%);
-    color: var(--white);
-    border-radius: var(--border-radius);
-    margin-top: 2rem;
-}
-
-.ctaSection h2,
-.ctaSection p {
-    color: var(--white);
+@media (min-width: 1024px) {
+  .headerSection h1 {
+    font-size: 3.5rem;
+  }
 }
