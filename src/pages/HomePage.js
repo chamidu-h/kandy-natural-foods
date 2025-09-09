@@ -16,9 +16,21 @@ const heroImages = [
 
 const SLIDE_INTERVAL = 4000;
 
+// Define the names of the static featured products
+const STATIC_FEATURED_PRODUCT_NAMES = [
+  'Kithul jaggery (250g)',
+  'Kithul treacle (200ml)',
+  'Kithul jaggery cubes (25 pcs)',
+];
+
 const HomePage = () => {
   const { products, loading } = React.useContext(ProductContext);
-  const [featuredProducts, setFeaturedProducts] = useState([]);
+
+  // State for the static featured products (3 defined products)
+  const [staticFeaturedProducts, setStaticFeaturedProducts] = useState([]);
+  
+  // State for the randomly selected products (6 products, excluding static ones)
+  const [randomProducts, setRandomProducts] = useState([]);
 
   // Hero slider state and effect
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,29 +43,35 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  // Effect to select random featured products when the product list is available
+  // Effect to separate static and random products when the product list is available
   useEffect(() => {
     if (products.length > 0) {
-      // Create a shuffled copy of the products array (Fisher-Yates shuffle)
-      const shuffled = [...products];
+      // 1. Find the static featured products by name
+      const staticProducts = STATIC_FEATURED_PRODUCT_NAMES.map(name => 
+        products.find(p => p.name === name)
+      ).filter(Boolean); // .filter(Boolean) removes any undefined if a product isn't found
+      
+      setStaticFeaturedProducts(staticProducts);
+
+      // 2. Create a list of products that are NOT in the static list
+      const otherProducts = products.filter(p => !STATIC_FEATURED_PRODUCT_NAMES.includes(p.name));
+      
+      // 3. Shuffle the 'otherProducts' list (Fisher-Yates shuffle)
+      const shuffled = [...otherProducts];
       let currentIndex = shuffled.length;
       let randomIndex;
 
-      // While there remain elements to shuffle
       while (currentIndex !== 0) {
-        // Pick a remaining element
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
-
-        // And swap it with the current element
         [shuffled[currentIndex], shuffled[randomIndex]] = [
           shuffled[randomIndex],
           shuffled[currentIndex],
         ];
       }
 
-      // Set the featured products to the first 6 items of the shuffled array
-      setFeaturedProducts(shuffled.slice(0, 6));
+      // 4. Set the random products to the first 6 items of the shuffled array
+      setRandomProducts(shuffled.slice(0, 6));
     }
   }, [products]); // This effect runs whenever the main 'products' list changes
 
@@ -142,14 +160,28 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
+      {/* Static Featured Products Section */}
       <section className={styles.featuredSection}>
         <h2 className={styles.sectionTitle}>Our Specialty Products</h2>
         {loading ? (
-          <p>Loading our delicious handcrafted treats...</p>
+          <p>Loading our specialty products...</p>
         ) : (
           <div className={styles.featuredGrid}>
-            {featuredProducts.map((product) => (
+            {staticFeaturedProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Random "More to Explore" Section */}
+      <section className={styles.featuredSection}>
+        <h2 className={styles.sectionTitle}>More to Explore</h2>
+        {loading ? (
+          <p>Loading more handcrafted treats...</p>
+        ) : (
+          <div className={styles.featuredGrid}>
+            {randomProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
