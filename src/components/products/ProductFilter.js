@@ -47,10 +47,8 @@ const FilterControls = ({ filters, onFilterChange, inModal = false }) => {
             >
               <option value="all">All</option>
               <option value="traditional">Traditional</option>
-              <option value="pudding">Puddings</option>
-              <option value="biscuit">Biscuits</option>
-              <option value="cake">Cakes</option>
-              <option value="fudge">Fudge & Toffee</option>
+              <option value="jaggery">Jaggery</option>
+              <option value="treacle">Treacle</option>
             </select>
           </div>
           <div className={styles.filterGroup}>
