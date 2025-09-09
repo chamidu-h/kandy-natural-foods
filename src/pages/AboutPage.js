@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
 import styles from './AboutPage.module.css';
 
-
 const AboutPage = () => {
   const contactSectionRef = useRef(null);
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,10 +14,8 @@ const AboutPage = () => {
       }
     }, 100);
 
-
     return () => clearTimeout(timer);
   }, []);
-
 
   return (
     <div className={styles.pageWrapper}>
@@ -33,7 +29,6 @@ const AboutPage = () => {
           <link rel="canonical" href="https://www.kandynaturalfoods.com/about" />
         </Helmet>
 
-
         {/* Page Header Section */}
         <section className={`${styles.section} ${styles.headerSection}`}>
           <h1>Keepers of a Sweet Tradition</h1>
@@ -41,7 +36,6 @@ const AboutPage = () => {
             We are a trusted Sri Lankan company dedicated to producing high-quality, original, and naturally handmade food items that honor our island's heritage.
           </p>
         </section>
-
 
         {/* Our Heritage Section */}
         <section className={`${styles.section} ${styles.heritageSection}`}>
@@ -59,6 +53,22 @@ const AboutPage = () => {
           </div>
         </section>
 
+        {/* --- NEW: Beyond Kithul - All Traditional Sweets Section --- */}
+        <section className={`${styles.section} ${styles.allSweetsSection}`}>
+          <div className={styles.allSweetsContent}>
+            <h2>Masters of Tradition, Beyond Kithul</h2>
+            <p>
+              While Kithul is at the heart of our story, our passion extends to the entire spectrum of Sri Lankan sweets. We are experts in crafting the delightful blend of tradition and flavor that defines our nation's festive treats. 
+            </p>
+            <p>
+              From the crispy elegance of <strong>kokis</strong> and the golden richness of <strong>konda kavum</strong>, to the soft, leaf-wrapped <strong>helapa</strong> and the spiced coconut goodness of <strong>bibikkan</strong>, each sweet offers a unique texture and taste. Whether it's the creamy <strong>watalappan</strong>, the crumbly <strong>aluwa</strong>, or the festive crunch of <strong>thala kerali</strong>, our sweets are more than just desserts—they’re edible celebrations of culture and generations of love.
+            </p>
+          </div>
+          <div className={styles.allSweetsImage}>
+            {/* Make sure to save the attached image to this path in your public folder */}
+            <img src="/images/all-sweets.jpg" alt="A vibrant assortment of traditional Sri Lankan sweets like kokis, kavum, aluwa, and pani walalu" />
+          </div>
+        </section>
 
         {/* The Kithul Tradition Section */}
         <section className={`${styles.section} ${styles.kithulHistorySection}`}>
@@ -76,7 +86,6 @@ const AboutPage = () => {
             <img src="/images/kithul-tapping-process.jpg" alt="A skilled tapper harvesting sap from a Kithul palm tree" className={styles.fullWidthImage} />
           </div>
         </section>
-
 
         {/* Kithul Products Section */}
         <section className={`${styles.section} ${styles.kithulProductsSection}`}>
@@ -98,7 +107,6 @@ const AboutPage = () => {
               </ul>
             </div>
 
-
             {/* Kithul Jaggery Card */}
             <div className={styles.productCard}>
               <div className={styles.productImageContainer}>
@@ -116,7 +124,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
 
         {/* Our Promise Section */}
         <section className={`${styles.section} ${styles.promiseSection}`}>
@@ -161,7 +168,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-
         {/* Contact Details Section */}
         <section ref={contactSectionRef} id="contact-us" className={`${styles.section} ${styles.contactSection}`}>
           <h2>Get in Touch</h2>
@@ -188,7 +194,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-
         {/* Final CTA Section */}
         <section className={`${styles.section} ${styles.ctaSection}`}>
           <h2>Experience the Tradition</h2>
@@ -203,6 +208,5 @@ const AboutPage = () => {
     </div>
   );
 };
-
 
 export default AboutPage;
