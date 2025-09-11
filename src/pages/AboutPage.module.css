@@ -372,3 +372,36 @@
     font-size: 3.5rem;
   }
 }
+
+/* --- NEW STYLES for WhatsApp Button --- */
+.whatsappButtonLink {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius, 8px);
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.whatsappButton:hover {
+  background-color: #1DAE54;
+  transform: translateY(-2px);
+}
+
+.whatsappIcon {
+  font-size: 1.25rem;
+}
+/* --- END OF NEW STYLES --- */
+

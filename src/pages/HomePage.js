@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
+import { FaWhatsapp } from 'react-icons/fa';
 import ProductCard from '../components/products/ProductCard';
 import { ProductContext } from '../context/ProductContext';
 import styles from './HomePage.module.css';
@@ -112,7 +113,7 @@ const HomePage = () => {
   return (
     <div className={styles.homeContainer}>
       <Helmet>
-        <title>Kandy Natural Foods | Authentic Sri Lankan Kithul & Gingelly Sweets</title>
+        <title>Kandy Natural Foods (PVT) LTD | Authentic Sri Lankan Kithul & Gingelly Sweets</title>
         <meta name="description" content="Buy pure Kithul Jaggery, Kithul Treacle, and handmade Gingelly rolls online. Experience the traditional taste of Kandy, Sri Lanka, delivered to your door." />
         <link rel="canonical" href="https://www.kandynaturalfoods.com" />
         <script type="application/ld+json">
@@ -139,12 +140,20 @@ const HomePage = () => {
             Discover the rich, natural flavors of handmade Kithul Jaggery, Kithul Treacle, and Gingelly sweets, crafted with love in the heart of Kandy.
           </p>
           <div className={styles.heroButtons}>
+            {/* Primary, standout button */}
             <Link to="/products">
-              <Button variant="secondary">Explore Our Products</Button>
+              <Button variant="heroPrimary">Explore Our Products</Button>
             </Link>
-            <Link to="/about#contact-us">
-              <Button variant="primary">Contact Us</Button>
-            </Link>
+            
+            {/* Group for secondary contact actions */}
+            <div className={styles.contactActions}>
+              <Link to="/about#contact-us">
+                <Button variant="heroSecondary">Contact Us</Button>
+              </Link>
+              <a href="https://wa.me/94772280203" target="_blank" rel="noopener noreferrer" className={styles.whatsappHeroButton} aria-label="Chat on WhatsApp">
+                <FaWhatsapp />
+              </a>
+            </div>
           </div>
           <div className={styles.sliderDots}>
             {heroImages.map((img, idx) => (

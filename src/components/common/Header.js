@@ -14,7 +14,7 @@ const Header = () => {
             className={styles.logoImg} 
           />
           <span className={styles.logoText}>
-            KANDY NATURAL FOODS
+            KANDY NATURAL FOODS (PVT) LTD
           </span>
         </NavLink>
         <nav className={styles.nav}>

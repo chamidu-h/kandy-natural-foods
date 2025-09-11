@@ -105,12 +105,14 @@ rgba(42, 77, 56, 0.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Modify existing .heroButtons class */
 .heroButtons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column; /* Stack primary button and contact group */
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* Space between the main button and the contact group */
+  margin-top: 1.5rem;
 }
 
 /* Brand-Aligned Slider Dots */
@@ -223,3 +225,36 @@ rgba(42, 77, 56, 0.6);
     box-shadow: var(--box-shadow-hover);
     border: 2px solid var(--light-gray);
 }
+
+/* --- NEW STYLES for Hero Buttons --- */
+
+
+
+/* New container for Contact Us and WhatsApp buttons */
+.contactActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between Contact Us and WhatsApp icon */
+}
+
+/* New style for the circular WhatsApp button */
+.whatsappHeroButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;   /* Slightly larger for better touch target */
+  height: 48px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.6rem; /* Icon size */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.whatsappHeroButton:hover {
+  background-color: #1DAE54;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+

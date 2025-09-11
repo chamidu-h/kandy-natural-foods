@@ -176,10 +176,6 @@ export const ProductProvider = ({ children }) => {
     return allProducts.find(p => p.id === parseInt(id));
   };
 
-  // Refresh products manually
-  const refreshProducts = () => {
-    fetchProducts();
-  };
 
   // Clear error
   const clearError = useCallback(() => {

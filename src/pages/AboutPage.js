@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { FaWhatsapp } from 'react-icons/fa';
 import Button from '../components/common/Button';
 import styles from './AboutPage.module.css';
 
+
 const AboutPage = () => {
   const contactSectionRef = useRef(null);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,8 +17,10 @@ const AboutPage = () => {
       }
     }, 100);
 
+
     return () => clearTimeout(timer);
   }, []);
+
 
   return (
     <div className={styles.pageWrapper}>
@@ -29,6 +34,7 @@ const AboutPage = () => {
           <link rel="canonical" href="https://www.kandynaturalfoods.com/about" />
         </Helmet>
 
+
         {/* Page Header Section */}
         <section className={`${styles.section} ${styles.headerSection}`}>
           <h1>Keepers of a Sweet Tradition</h1>
@@ -36,6 +42,7 @@ const AboutPage = () => {
             We are a trusted Sri Lankan company dedicated to producing high-quality, original, and naturally handmade food items that honor our island's heritage.
           </p>
         </section>
+
 
         {/* Our Heritage Section */}
         <section className={`${styles.section} ${styles.heritageSection}`}>
@@ -52,6 +59,7 @@ const AboutPage = () => {
             </p>
           </div>
         </section>
+
 
         {/* --- NEW: Beyond Kithul - All Traditional Sweets Section --- */}
         <section className={`${styles.section} ${styles.allSweetsSection}`}>
@@ -70,6 +78,7 @@ const AboutPage = () => {
           </div>
         </section>
 
+
         {/* The Kithul Tradition Section */}
         <section className={`${styles.section} ${styles.kithulHistorySection}`}>
           <div className={styles.kithulHistoryContent}>
@@ -86,6 +95,7 @@ const AboutPage = () => {
             <img src="/images/kithul-tapping-process.jpg" alt="A skilled tapper harvesting sap from a Kithul palm tree" className={styles.fullWidthImage} />
           </div>
         </section>
+
 
         {/* Kithul Products Section */}
         <section className={`${styles.section} ${styles.kithulProductsSection}`}>
@@ -107,6 +117,7 @@ const AboutPage = () => {
               </ul>
             </div>
 
+
             {/* Kithul Jaggery Card */}
             <div className={styles.productCard}>
               <div className={styles.productImageContainer}>
@@ -124,6 +135,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
 
         {/* Our Promise Section */}
         <section className={`${styles.section} ${styles.promiseSection}`}>
@@ -168,6 +180,7 @@ const AboutPage = () => {
           </div>
         </section>
 
+
         {/* Contact Details Section */}
         <section ref={contactSectionRef} id="contact-us" className={`${styles.section} ${styles.contactSection}`}>
           <h2>Get in Touch</h2>
@@ -182,6 +195,12 @@ const AboutPage = () => {
             <div className={styles.contactItem}>
               <h3>Phone / WhatsApp</h3>
               <p>+94 77 228 0203</p>
+              <a href="https://wa.me/94772280203" target="_blank" rel="noopener noreferrer" className={styles.whatsappButtonLink}>
+                <Button variant="whatsapp" className={styles.whatsappButton}>
+                  <FaWhatsapp className={styles.whatsappIcon} />
+                  Chat on WhatsApp
+                </Button>
+              </a>
             </div>
             <div className={styles.contactItem}>
               <h3>Email</h3>
@@ -193,6 +212,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
 
         {/* Final CTA Section */}
         <section className={`${styles.section} ${styles.ctaSection}`}>
@@ -208,5 +228,6 @@ const AboutPage = () => {
     </div>
   );
 };
+
 
 export default AboutPage;
