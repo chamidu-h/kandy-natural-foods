@@ -38,16 +38,13 @@ const ProductCard = ({ product }) => {
       {/* The entire card is a link, but the carousel can be interacted with */}
       <Link to={`/products/${id}`} className={styles.cardLink}>
         <div className={styles.imageContainer}>
-          {images.length > 0 ? (
+          {images.length > 0 && (
             <img
               key={currentIndex} // Re-trigger the animation on index change
               src={images[currentIndex]}
               alt={`${name} view ${currentIndex + 1}`}
               className={styles.image}
             />
-          ) : (
-            // Fallback placeholder if no images are available
-            <img src="/images/placeholder.jpg" alt="Placeholder" className={styles.image} />
           )}
           
           {/* Show navigation buttons only if there is more than one image */}

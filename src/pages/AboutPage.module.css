@@ -11,24 +11,36 @@
 }
 
 .section {
-  margin-bottom: 4rem;
-  padding: 3rem 0;
-  /* animation properties removed */
-  opacity: 1; /* Ensure visible with removed animation */
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 0;
+  opacity: 1;
 }
 
-/* Add section indices removed since animations are removed - no longer needed */
+@media (min-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+  }
+}
+
 .headerSection {
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 2.5rem 1.25rem;
   background-color: var(--light-background, #f8f9fa);
   border-radius: var(--border-radius-large, 16px);
   border: 1px solid var(--light-gray, #e9ecef);
 }
 
+@media (min-width: 768px) {
+  .headerSection {
+    padding: 4rem 1.5rem;
+  }
+}
+
 .headerSection h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .subtitle {
@@ -282,11 +294,17 @@
 
 .contactItem {
   background: var(--white);
-  padding: 2rem;
+  padding: 1.25rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   border-left: 5px solid var(--secondary-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 600px) {
+  .contactItem {
+    padding: 2rem;
+  }
 }
 
 .contactItem:hover {

@@ -10,6 +10,8 @@ import AdminPage from './pages/AdminPage';
 import { ProductProvider } from './context/ProductContext';
 import ScrollToTop from './components/utility/ScrollToTop';
 
+import FloatingWhatsApp from './components/common/FloatingWhatsApp';
+
 function App() {
   return (
     <ProductProvider>
@@ -26,6 +28,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </ProductProvider>
   );

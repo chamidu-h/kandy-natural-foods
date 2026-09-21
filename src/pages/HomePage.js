@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
-import { FaWhatsapp } from 'react-icons/fa';
 import ProductCard from '../components/products/ProductCard';
+import VideoShowcase from '../components/common/VideoShowcase';
 import { ProductContext } from '../context/ProductContext';
 import styles from './HomePage.module.css';
 
@@ -135,27 +135,22 @@ const HomePage = () => {
           <div className={styles.heroOverlay}></div>
         </div>
         <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>
+            <span>Pure & Handcrafted in Kandy</span>
+          </div>
           <h1 className={styles.heroTitle}>Authentic Kithul Jaggery & Traditional Sweets</h1>
           <p className={styles.heroSubtitle}>
             Discover the rich, natural flavors of handmade Kithul Jaggery, Kithul Treacle, and Gingelly sweets, crafted with love in the heart of Kandy.
           </p>
           <div className={styles.heroButtons}>
-            {/* Primary, standout button */}
             <Link to="/products">
               <Button variant="heroPrimary">Explore Our Products</Button>
             </Link>
-            
-            {/* Group for secondary contact actions */}
-            <div className={styles.contactActions}>
-              <Link to="/about#contact-us">
-                <Button variant="heroSecondary">Contact Us</Button>
-              </Link>
-              <a href="https://wa.me/94772280203" target="_blank" rel="noopener noreferrer" className={styles.whatsappHeroButton} aria-label="Chat on WhatsApp">
-                <FaWhatsapp />
-              </a>
-            </div>
+            <Link to="/about#contact-us">
+              <Button variant="heroSecondary">Contact Us</Button>
+            </Link>
           </div>
-          <div className={styles.sliderDots}>
+          <div className={styles.sliderDots} role="tablist" aria-label="Slide navigation">
             {heroImages.map((img, idx) => (
               <button
                 key={img}
@@ -201,6 +196,9 @@ const HomePage = () => {
             </Link>
         </div>
       </section>
+
+      {/* Video Showcase Section */}
+      <VideoShowcase />
 
       {/* Our Story Section */}
       <section className={styles.storySection}>

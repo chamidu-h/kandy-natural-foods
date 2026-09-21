@@ -1,0 +1,68 @@
+[
+  {
+    "id": 7,
+    "name": "Kithul treacle (340ml)",
+    "price": 1800,
+    "category": "treacle",
+    "description": "Taste the pure essence of Sri Lanka with Kandy Natural Foods' Kithul Treacle. This all-natural palm syrup is a perfect, healthy sweetener for your kitchen. Made without any added sugar, colors, or preservatives, it’s a delicious way to enhance your food and drinks. Buy Kithul Treacle online and enjoy a true taste of nature.\n\nKithul Treacle, Kithul Pani, Sri Lankan Syrup, Natural Sweetener, Palm Syrup, No Added Sugar, Vegan.",
+    "images": [
+      "/images/products/kithul-treacle-340ml.jpg"
+    ],
+    "created_at": "2025-09-09T15:51:06.791745+00:00"
+  },
+  {
+    "id": 8,
+    "name": "Kithul jaggery (500g)",
+    "price": 2400,
+    "category": "jaggery",
+    "description": "Discover the rich, authentic taste of Sri Lankan Kithul Jaggery. Made from the pure sap of the Kithul palm, this natural sweetener has a deep, smoky flavour with no added sugar, colors, or preservatives. It's the perfect, wholesome alternative to refined sugar for your tea, coffee, or desserts. Experience a true taste of tradition.",
+    "images": [
+      "/images/products/kithul-jaggery-500g.jpg"
+    ],
+    "created_at": "2025-09-09T15:56:18.018663+00:00"
+  },
+  {
+    "id": 9,
+    "name": "Kithul jaggery cubes (25 pcs)",
+    "price": 1100,
+    "category": "jaggery",
+    "description": "Enjoy the authentic taste of Sri Lanka with our Kithul Jaggery Cubes. These perfectly portioned, all-natural sweetener bites are made from pure Kithul palm sap. With no added sugar, colors, or preservatives, they are the ideal healthy alternative to sweeten your tea, coffee, or to enjoy as a quick, guilt-free snack.",
+    "images": [
+      "/images/products/kithul-jaggery-cubes-25pcs.jpg"
+    ],
+    "created_at": "2025-09-09T16:01:48.102497+00:00"
+  },
+  {
+    "id": 10,
+    "name": "Kithul treacle (200ml)",
+    "price": 1200,
+    "category": "treacle",
+    "description": "Taste the pure essence of Sri Lanka with Kandy Natural Foods' Kithul Treacle. This all-natural palm syrup is a perfect, healthy sweetener for your kitchen. Made without any added sugar, colors, or preservatives, it’s a delicious way to enhance your food and drinks. Buy Kithul Treacle online and enjoy a true taste of nature.\n\nKithul Treacle, Kithul Pani, Sri Lankan Syrup, Natural Sweetener, Palm Syrup, No Added Sugar, Vegan.",
+    "images": [
+      "/images/products/kithul-treacle-200ml.jpg"
+    ],
+    "created_at": "2025-09-09T16:05:03.582844+00:00"
+  },
+  {
+    "id": 11,
+    "name": "Kithul jaggery (250g)",
+    "price": 1300,
+    "category": "jaggery",
+    "description": "Discover the rich, authentic taste of Sri Lankan Kithul Jaggery. Made from the pure sap of the Kithul palm, this natural sweetener has a deep, smoky flavor with no added sugar, colors, or preservatives. It's the perfect, wholesome alternative to refined sugar for your tea, coffee, or desserts. Experience a true taste of tradition.",
+    "images": [
+      "/images/products/kithul-jaggery-250g.jpg"
+    ],
+    "created_at": "2025-09-09T16:08:16.747467+00:00"
+  },
+  {
+    "id": 12,
+    "name": "Kithul jaggary (250g)",
+    "price": 500,
+    "category": "jaggery",
+    "description": "Taste the rich, smoky flavor of authentic Kithul Jaggery. Made from 100% pure Kithul palm sap, this natural sweetener is perfect for a wide range of desserts, sweetening tea, or creating a truly perfect Watalappan. It contains no added sugar or preservatives—just pure, wholesome goodness in a vacuum-sealed pack.",
+    "images": [
+      "/images/products/kithul-jaggery-250g-vacuum.jpg"
+    ],
+    "created_at": "2025-09-09T16:35:22.509301+00:00"
+  }
+]

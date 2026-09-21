@@ -32,15 +32,13 @@ const ProductDetailPage = () => {
         {/* Image Gallery Section */}
         <div className={styles.galleryContainer}>
           <div className={styles.mainImageContainer}>
-            {images.length > 0 ? (
+            {images.length > 0 && (
               <img
                 key={currentImageIndex} // Add key to re-trigger animations
                 src={images[currentImageIndex]}
                 alt={`${product.name} view ${currentImageIndex + 1}`}
                 className={styles.mainImage}
               />
-            ) : (
-              <img src="/images/placeholder.jpg" alt="Placeholder" className={styles.mainImage} />
             )}
           </div>
           {/* Thumbnails - only show if there is more than one image */}
