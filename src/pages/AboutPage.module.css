@@ -1,8 +1,4 @@
 /* General Styles without animations */
-.pageWrapper {
-  /* animation removed intentionally for no entry animation */
-}
-
 .aboutContainer {
   width: 100%;
   max-width: 1200px;
